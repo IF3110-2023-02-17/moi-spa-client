@@ -1,0 +1,1 @@
+docker build -t if3110-spa-react-1:latest .

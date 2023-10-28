@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+    spa-app:
+        image: if3110-spa-react-1:latest
+        ports:
+            - 5173:5173
+        hostname: spa-app
+        env_file:
+            - .env
+        volumes:
+            - .:/app/spa-react
+            - /app/spa-react/node_modules
