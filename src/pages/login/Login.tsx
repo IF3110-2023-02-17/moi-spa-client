@@ -1,6 +1,6 @@
 
-import AuthWrapper from "../../components/AuthWrapper/AuthWrapper";
-import LoginForm from "../../components/AuthForm/LoginForm";
+import AuthWrapper from "../../components/authWrapper/AuthWrapper";
+import LoginForm from "../../components/authForm/LoginForm";
 
 const Login = () => {
 

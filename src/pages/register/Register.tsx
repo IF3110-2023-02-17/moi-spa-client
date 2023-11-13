@@ -1,5 +1,5 @@
-import RegisterForm from "../../components/AuthForm/RegisterForm";
-import AuthWrapper from "../../components/AuthWrapper/AuthWrapper";
+import RegisterForm from "../../components/authForm/RegisterForm";
+import AuthWrapper from "../../components/authWrapper/AuthWrapper";
 
 
 
