@@ -64,7 +64,7 @@ const RegisterForm = () => {
 
           <div className="mt-8 space-y-6">
             <div>
-              <Button type="submit" label="Daftar" />
+              <Button type="submit">Daftar</Button>
             </div>
           </div>
         </form>
