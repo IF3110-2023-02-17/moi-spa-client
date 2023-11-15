@@ -1,18 +1,15 @@
-import RegisterForm from "../../components/authForm/RegisterForm";
-import AuthWrapper from "../../components/authWrapper/AuthWrapper";
-
-
+import RegisterForm from "../../components/AuthForm/RegisterForm";
+import AuthWrapper from "../../components/AuthWrapper/AuthWrapper";
 
 const Register = () => {
-
-    return (
-      <>
-        <div className = "grid md:grid-cols-2">
-          <AuthWrapper/>
-          <RegisterForm/>
-        </div>
-      </>
-    )
-}
+  return (
+    <>
+      <div className="grid md:grid-cols-2">
+        <AuthWrapper />
+        <RegisterForm />
+      </div>
+    </>
+  );
+};
 
 export default Register;
