@@ -1,29 +1,34 @@
-import { useEffect, useState } from "react";
-import InputForm from "../utils/InputForm";
+import { useForm } from "react-hook-form";
 import Button from "../utils/Button";
+import InputForm from "../utils/InputForm";
+
+type Inputs = {
+  email: string;
+  password: string;
+};
 
 const RegisterForm = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm<Inputs>({ mode: "all" });
 
-  const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
-  const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsEmailValid(email.length > 0);
-  }, [email]);
-
-  useEffect(() => {
-    setIsPasswordValid(password.length > 0);
-  }, [password]);
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+  });
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="p-4 m-4 max-w-md w-full space-y-8">
+      <div className=" min-h-screen flex items-center justify-center bg-gray-100">
+        <form
+          onSubmit={onSubmit}
+          noValidate
+          className="p-4 m-4 max-w-md w-full space-y-8"
+        >
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Register
+              Selamat Datang Kembali!
             </h2>
           </div>
 
@@ -33,9 +38,14 @@ const RegisterForm = () => {
               type="email"
               label="Email"
               placeholder="Masukkan email"
-              value={[email, setEmail]}
-              status={isEmailValid}
-              errorText="Masukkan email kamu!"
+              {...register("email", {
+                required: "Masukkan email kamu!",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Email tidak valid",
+                },
+              })}
+              errorText={errors.email?.message}
             />
           </div>
 
@@ -45,18 +55,19 @@ const RegisterForm = () => {
               type="password"
               label="Password"
               placeholder="Masukkan password"
-              value={[password, setPassword]}
-              status={isPasswordValid}
-              errorText="Masukkan password kamu!"
+              {...register("password", {
+                required: "Masukkan password kamu!",
+              })}
+              errorText={errors.password?.message}
             />
           </div>
 
-          <form className="mt-8 space-y-6">
+          <div className="mt-8 space-y-6">
             <div>
-              <Button type="submit" label="Masuk" />
+              <Button type="submit" label="Daftar" />
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </>
   );

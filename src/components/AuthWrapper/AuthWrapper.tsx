@@ -1,7 +1,7 @@
 const AuthWrapper = () => {
   return (
     <>
-      <div className="hidden md:block bg-gradient-to-b from-[#03034b] to-[#3822e1] relative">
+      <div className="hidden md:flex flex-col justify-end bg-gradient-to-b from-[#03034b] to-[#3822e1] relative">
         <div className="auth-decor">
           <svg
             className="auth-shapes"
@@ -56,9 +56,9 @@ const AuthWrapper = () => {
                 width="92"
                 height="83"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feColorMatrix
                   in="SourceAlpha"
                   type="matrix"
@@ -92,8 +92,8 @@ const AuthWrapper = () => {
                 y2="-1472"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#03034B" />
-                <stop offset="0.978989" stop-color="#3822E1" />
+                <stop stopColor="#03034B" />
+                <stop offset="0.978989" stopColor="#3822E1" />
               </linearGradient>
             </defs>
           </svg>
