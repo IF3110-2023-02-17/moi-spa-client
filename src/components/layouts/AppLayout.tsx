@@ -1,7 +1,12 @@
 import clsx from "clsx";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Navigate, Outlet } from "react-router-dom";
+import { useUser } from "../../hooks/user";
 
 function AppLayout() {
+  const { data, isLoading } = useUser();
+  if (!isLoading && !data) {
+    return <Navigate to={"/login"} />;
+  }
   return (
     <>
       <header className="bg-primary w-full py-4 fixed top-0">

@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppLayout from "./components/layouts/AppLayout";
+import AuthLayout from "./components/layouts/AuthLayout";
 import Login from "./pages/login/Login";
 import PostForm from "./pages/posts/PostForm";
 import PostHome from "./pages/posts/PostHome";
@@ -30,12 +31,17 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
+        element: <AuthLayout />,
+        children: [
+          {
+            path: "login",
+            element: <Login />,
+          },
+          {
+            path: "register",
+            element: <Register />,
+          },
+        ],
       },
     ],
   },

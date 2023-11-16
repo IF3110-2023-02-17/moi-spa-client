@@ -1,4 +1,9 @@
+import { useMutation } from "@tanstack/react-query";
+import { isAxiosError } from "axios";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../../hooks/user";
+import { apiClient } from "../../lib/api";
 import Button from "../utils/Button";
 import InputForm from "../utils/InputForm";
 
@@ -12,10 +17,33 @@ const LoginForm = () => {
     register,
     formState: { errors },
     handleSubmit,
+    setError,
   } = useForm<Inputs>({ mode: "all" });
+  const { refetch } = useUser();
+  const navigate = useNavigate();
+
+  const loginMutation = useMutation({
+    mutationFn: async (data: Inputs) => {
+      return await apiClient.post("/user/login", data).then(() => refetch());
+    },
+    onError(error) {
+      if (isAxiosError(error)) {
+        if (typeof error.response?.data.message === "string") {
+          setError("password", {
+            type: "manual",
+            message: error.response?.data.message,
+          });
+        }
+      }
+    },
+    onSuccess() {
+      navigate("/");
+    },
+  });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    if (loginMutation.isPending) return;
+    loginMutation.mutate(data);
   });
 
   return (
@@ -62,10 +90,18 @@ const LoginForm = () => {
             />
           </div>
 
-          <div className="mt-8 space-y-6">
+          <div className="mt-8">
             <div>
-              <Button type="submit">Masuk</Button>
+              <Button type="submit" disabled={loginMutation.isPending}>
+                Masuk
+              </Button>
             </div>
+            <Link
+              to={"/register"}
+              className="w-full text-center block text-sm font-medium mt-4 underline"
+            >
+              Daftar
+            </Link>
           </div>
         </form>
       </div>
