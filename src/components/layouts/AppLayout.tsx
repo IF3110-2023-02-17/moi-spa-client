@@ -29,6 +29,7 @@ function AppLayout() {
             </svg>
           </Link>
           <ul className="flex items-center gap-x-6">
+            <NavigationLink to="/subscription" label="Subscription" />
             <NavigationLink to="/" label="Home" />
             <NavigationLink to="/menfess" label="Menfess" />
             <NavigationLink onClick={() => {}} label="Logout" />

@@ -8,6 +8,7 @@ import PostForm from "./pages/posts/PostForm";
 import PostHome from "./pages/posts/PostHome";
 import PostPage from "./pages/posts/PostPage";
 import Register from "./pages/register/Register";
+import SubscriptionPage from "./pages/subscription/SubscriptionPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
           {
             path: "posts/:postId",
             element: <PostPage />,
+          },
+          {
+            path: "subscription",
+            element: <SubscriptionPage />,
           },
         ],
       },
