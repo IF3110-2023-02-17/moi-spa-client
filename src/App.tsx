@@ -9,6 +9,7 @@ import PostHome from "./pages/posts/PostHome";
 import PostPage from "./pages/posts/PostPage";
 import Register from "./pages/register/Register";
 import SubscriptionPage from "./pages/subscription/SubscriptionPage";
+import MenfessPage from "./pages/fans-message/MenfessPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           {
             path: "subscription",
             element: <SubscriptionPage />,
+          },
+          {
+            path: "menfess",
+            element: <MenfessPage />,
           },
         ],
       },
