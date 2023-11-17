@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppLayout from "./components/layouts/AppLayout";
 import AuthLayout from "./components/layouts/AuthLayout";
 import Login from "./pages/login/Login";
+import MovieAdd from "./pages/movies/MovieAdd";
+import MoviesPage from "./pages/movies/Movies";
 import PostForm from "./pages/posts/PostForm";
 import PostHome from "./pages/posts/PostHome";
 import PostPage from "./pages/posts/PostPage";
@@ -32,6 +34,19 @@ const router = createBrowserRouter([
           {
             path: "subscription",
             element: <SubscriptionPage />,
+          },
+          {
+            path: "movies/",
+            children: [
+              {
+                path: "",
+                element: <MoviesPage />,
+              },
+              {
+                path: "new/",
+                element: <MovieAdd />,
+              },
+            ],
           },
         ],
       },
