@@ -17,12 +17,12 @@ Aplikasi MOI For Studio adalah aplikasi untuk studio film yang berguna untuk men
 ## Halaman Menfess
 
 # Pembagian Tugas Anggota
-Frontend Halaman Home Konten : 13521171
-Frontend Halaman Detail Konten : 13521171
-Frontend Halaman Login dan Register : 13521171
-Frontend Halaman Insert Konten : 13521171
-Frontend Halaman Menfess : 13521109
-Frontend Halaman Subscription : 13521109
+- Frontend Halaman Home Konten : 13521171
+- Frontend Halaman Detail Konten : 13521171
+- Frontend Halaman Login dan Register : 13521171
+- Frontend Halaman Insert Konten : 13521171
+- Frontend Halaman Menfess : 13521109
+- Frontend Halaman Subscription : 13521109
 
 # HOW TO RUN WITH DOCKER
 
