@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
+import SubscriptionCard from "../../components/Subscription/SubscriptionCard";
 import { apiClient } from "../../lib/api";
 import { Subscription } from "../../types/subscription";
-import SubscriptionCard from "../../components/Subscription/SubscriptionCard";
 
 function SubscriptionPage() {
-  const { data } = useQuery({
-    queryKey: ["subscripiton"],
+  const { data, refetch } = useQuery({
+    queryKey: ["subscription"],
     queryFn: () =>
       apiClient
         .get<{ subscriptions: Subscription[] }>("/subscription")
@@ -13,13 +13,13 @@ function SubscriptionPage() {
   });
 
   const handleAccept = (subscriber_id: number): void => {
-    apiClient.post(`/subscription/accept/${subscriber_id}`).then((res) => {
-      res;
+    apiClient.post(`/subscription/accept/${subscriber_id}`).then(() => {
+      refetch();
     });
   };
   const handleReject = (subscriber_id: number): void => {
-    apiClient.post(`/subscription/reject/${subscriber_id}`).then((res) => {
-      res;
+    apiClient.post(`/subscription/reject/${subscriber_id}`).then(() => {
+      refetch();
     });
   };
 
