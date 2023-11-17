@@ -1,3 +1,29 @@
+# Deskripsi Singkat Aplikasi
+Aplikasi MOI For Studio adalah aplikasi untuk studio film yang berguna untuk mengupload konten, melihat menfess dari user yang subscribe kepada studio, menerima dan menolak request subscribe user, dan mengedit movie yang dimiliki oleh studio tersebut.
+
+# Tangkapan Layar Aplikasi
+## Halaman Login dan Register
+
+## Halaman Content 
+
+## Halaman Tambah Content Baru
+
+## Halaman Detail Content
+
+## Halaman Subscription Request
+
+## Halaman Film dan Menambahkan Film
+
+## Halaman Menfess
+
+# Pembagian Tugas Anggota
+Frontend Halaman Home Konten : 13521171
+Frontend Halaman Detail Konten : 13521171
+Frontend Halaman Login dan Register : 13521171
+Frontend Halaman Insert Konten : 13521171
+Frontend Halaman Menfess : 13521109
+Frontend Halaman Subscription : 13521109
+
 # HOW TO RUN WITH DOCKER
 
 #### 1. Build Docker
